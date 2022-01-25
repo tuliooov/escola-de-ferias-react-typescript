@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-no-target-blank */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Banner from 'components/Inicio/Banner'

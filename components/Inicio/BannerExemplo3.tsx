@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
-import Link from "next/link";
+import ContextPagina from "../contexts/ContextPagina";
 
 
-export default function Banner() {
-;
+export default function BannerExemplo3() {
+
+    const {
+        valor,
+    } = useContext(ContextPagina);
 
     return (
         <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
@@ -11,7 +14,7 @@ export default function Banner() {
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-blueGray-600">
-              Notus NextJS
+                Notus NextJS - valor = {valor}
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
                 Notus NextJS is Free and Open Source. It does not change any of

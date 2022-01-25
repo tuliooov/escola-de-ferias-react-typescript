@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect } from "react";
 import App from "next/app";
 import Head from "next/head";
 import { ContextGlobalProvider } from 'components/contexts/ContextGlobal'
-import Router from "next/router";
-
-import PageChange from "components/PageChange/PageChange.js";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "styles/tailwind.css";
 
 
-function MeuAppSw({ Component, pageProps }) {
+function MeuAppSw({ Component }) {
   useEffect(() => {
     if("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
@@ -47,7 +43,6 @@ export default class MyApp extends App {
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
             />
             <title>Escola de Ferias</title>
-            {/* <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> */}
           </Head>
           <Layout>
               <MeuAppSw Component={<Component {...pageProps} />}/>

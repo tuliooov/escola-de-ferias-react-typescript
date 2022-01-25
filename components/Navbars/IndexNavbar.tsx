@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
-import ContextPagina from 'components/contexts/ContextPagina'
+import React from "react";
 import Link from "next/link";
-// components
+import IndexDropdown from "../Dropdowns/IndexDropdown";
 
-import IndexDropdown from "components/Dropdowns/IndexDropdown.js";
-
-export default function Navbar(props) {
+export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
   return (

@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
-import {ContextGlobal} from 'components/contexts/ContextGlobal'
-import Link from "next/link";
+import React from "react";
 
-export default function Number3() {
+export default function Number2(props) {
 
     const {
-        valor, setValor
-      } = useContext(ContextGlobal);
+        valor,
+        setValor
+    } = props
 
     return (
         <>

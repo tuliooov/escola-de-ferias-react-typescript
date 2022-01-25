@@ -19,15 +19,14 @@
     "tailwindcss": "2.0.4"
   },
   "scripts": {
+    "lint": "eslint . --ext .tsx",
+    "lint:fix": "eslint . --ext .tsx --fix",
     "start": "next start",
     "build": "next build",
     "firebase": "next build && next export && firebase deploy",
     "dev": "next dev",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "build:tailwind": "tailwind build styles/index.css -o styles/tailwind.css"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -41,11 +40,13 @@
       "last 1 safari version"
     ]
   },
-  "optionalDependencies": {
-    "typescript": "4.2.3"
-  },
   "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
     "autoprefixer": "10.2.5",
-    "postcss": "8.2.8"
+    "eslint": "^8.7.0",
+    "postcss": "8.2.8",
+    "typescript": "^4.5.5"
   }
 }
