@@ -1,11 +1,10 @@
 import React, { useEffect, useContext } from "react";
-
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import Banner from 'components/Inicio/Banner'
-import Outros from 'components/Inicio/Outros'
-import Number5 from 'components/Inicio/Number5'
-import Footer from "components/Footers/Footer.js";
-import { ContextGlobal } from 'components/contexts/ContextGlobal'
+import { ContextGlobal } from "../components/contexts/ContextGlobal";
+import Footer from "../components/Footers/Footer";
+import Banner from "../components/Inicio/Banner";
+import Number5 from "../components/Inicio/Number5";
+import Outros from "../components/Inicio/Outros";
+import IndexNavbar from "../components/Navbars/IndexNavbar";
 
 export default function Exemplo4() {
   console.log('Rodei Index')
@@ -26,7 +25,7 @@ export default function Exemplo4() {
 
   return (
     <>
-        <IndexNavbar fixed />
+        <IndexNavbar />
         <Banner/>
         <Number5/>
         <Outros/>

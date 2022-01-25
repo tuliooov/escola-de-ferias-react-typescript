@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Number2(props) {
+export default function Number2(props: { valor: number; setValor: React.Dispatch<React.SetStateAction<number>>; }) {
 
     const {
         valor,

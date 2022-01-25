@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import Banner from 'components/Inicio/Banner'
-import Outros from 'components/Inicio/Outros'
-import Number2 from 'components/Inicio/Number2'
-import Footer from "components/Footers/Footer.js";
+import Footer from "../components/Footers/Footer";
+import Banner from "../components/Inicio/Banner";
+import Number2 from "../components/Inicio/Number2";
+import Outros from "../components/Inicio/Outros";
+import IndexNavbar from "../components/Navbars/IndexNavbar";
 
 export default function Index() {
   console.log('RODEI EXEMPLO 2')
@@ -27,7 +26,7 @@ export default function Index() {
 
   return (
     <>
-        <IndexNavbar fixed />
+        <IndexNavbar />
         <Banner/>
         <Number2 valor={valor} setValor={setValor}/>
         <Outros/>

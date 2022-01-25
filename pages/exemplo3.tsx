@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-
-import IndexNavbar from "components/Navbars/IndexNavbarExemplo3.js";
-import Banner from 'components/Inicio/BannerExemplo3'
-import Outros from 'components/Inicio/Outros'
-import Number3 from 'components/Inicio/Number3'
-import Footer from "components/Footers/Footer.js";
-import ContextPagina from 'components/contexts/ContextPagina'
+import ContextPagina from "../components/contexts/ContextPagina";
+import Footer from "../components/Footers/Footer";
+import Banner from "../components/Inicio/Banner";
+import Number3 from "../components/Inicio/Number3";
+import Outros from "../components/Inicio/Outros";
+import IndexNavbar from "../components/Navbars/IndexNavbar";
 
 export default function Exemplo3() {
   console.log('Rodei Index')
@@ -17,7 +16,7 @@ export default function Exemplo3() {
       <ContextPagina.Provider value={{
         valor, setValor
       }}>
-        <IndexNavbar fixed />
+        <IndexNavbar />
         <Banner/>
         <Number3/>
         <Outros/>

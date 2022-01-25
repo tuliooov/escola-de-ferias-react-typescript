@@ -1,8 +1,5 @@
 import React from "react";
-
-// layout for page
-
-import Auth from "layouts/Auth.js";
+import Auth from "../../layouts/Auth";
 
 export default function Register() {
   return (

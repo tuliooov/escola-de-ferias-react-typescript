@@ -1,14 +1,13 @@
 import React from "react";
-
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import Banner from 'components/Inicio/Banner'
+import Banner from "../components/Inicio/Banner";
+import IndexNavbar from "../components/Navbars/IndexNavbar";
 
 export default function Index() {
   console.log('Rodei Index')
 
   return (
     <>
-        <IndexNavbar fixed />
+        <IndexNavbar />
         <Banner/>
     </>
   );
