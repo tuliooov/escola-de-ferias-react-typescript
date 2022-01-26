@@ -13,7 +13,7 @@ export default function Props() {
           title="O que é o Props no React?"
           description="As props são entradas que não podem ser alteradas dentro de um componente. Componentes devem, obrigatoriamente, apenas ler as props. Sendo assim, todos os componentes de React devem ser “puros” e não podem alterar nenhum valor das props. ... O React é uma ferramenta muito poderosa e com uma documentação"
         />
-        <ExemploProps/> {/* Esse componente aceita o parametro `exibr` */} 
+        <ExemploProps exibir={true} /> {/* Esse componente aceita o parametro `exibr` */} 
         <Footer />
     </>
   );

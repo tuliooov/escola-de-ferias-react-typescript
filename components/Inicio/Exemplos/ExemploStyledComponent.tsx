@@ -1,19 +1,6 @@
-import { AxiosResponse } from "axios";
-import React, { useContext, useEffect, useState } from "react";
-import api from "../../../services/api";
+import React, { useContext, useState } from "react";
 import { ContextGlobal } from "../../contexts/ContextGlobal";
 import { DivBlackAbsolute } from "./exemplos.styles";
-
-
-interface ProductsType {
-    id: number
-    descricao: string
-    marca: string
-}
-interface ResponseProdutosType {
-    produtos: ProductsType[]
-}
-
 
 export default function ExemploStyledComponent() {
 
@@ -25,21 +12,7 @@ export default function ExemploStyledComponent() {
         fecharExemplo
     } = useContext(ContextGlobal)
 
-    const [products, setProducts] = useState(null as ProductsType[])
-
-    useEffect(() => {
-        if (exibir === true && products === null) {
-            api.get('/produtos')
-                .then((response: AxiosResponse<ResponseProdutosType>) => {
-                    console.log("response produtos", response)
-                    setProducts(response.data.produtos)
-                })
-                .catch(() => {
-                    setProducts([])
-                })
-        }
-    }, [products, exibir])
-
+    const [color, setColor] = useState("#333")
 
     if (exibir !== true) {
         return <></>
@@ -47,50 +20,16 @@ export default function ExemploStyledComponent() {
 
     return (
         <>
-            <DivBlackAbsolute>
+            <DivBlackAbsolute color={color}>
                 <h1>
                     OLÁ MUNDO !
                 </h1>
                 <p>
-                    do ConexaoBackEnd
+                    do Styled Component
                 </p>
-                {
-                    products === null
-                        ? <h1>
-                            Buscando dados...
-                        </h1>
-                        : products.length === 0 ?
-                            <span>Nenhum produto encontrado</span>
-                            : <table>
-                                <thead>
-                                    <tr>
-                                        <th>id</th>
-                                        <th>descricao</th>
-                                        <th>marca</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        products.map((product: ProductsType) => (
-                                            <tr>
-                                                <td>
-                                                    {product.id}
-                                                </td>
-                                                <td>
-                                                    {product.descricao}
-                                                </td>
-                                                <td>
-                                                    {product.marca}
-                                                </td>
-                                            </tr>
-                                        ))
-                                    }
-                                </tbody>
-                            </table>
-                }
-
+                <input type="color" value={color} onChange={(e) => setColor(e.target.value)}>
+                </input>
                 <button onClick={fecharExemplo}>Fechar</button>
-
             </DivBlackAbsolute>
         </>
     )
