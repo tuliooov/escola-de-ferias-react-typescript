@@ -41,6 +41,9 @@ export default function Banner() {
               >
                 Github Star
               </a>
+              <br></br>
+              <br></br>
+              <br></br>
               <Link href={`/exemplos`} >
                 <a
                   className="github-star ml-1 text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 uppercase text-sm shadow hover:shadow-lg"
