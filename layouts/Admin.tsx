@@ -1,11 +1,8 @@
 import React from "react";
-
-// components
-
-import AdminNavbar from "components/Navbars/AdminNavbar.js";
-import Sidebar from "components/Sidebar/Sidebar.js";
-import HeaderStats from "components/Headers/HeaderStats.js";
-import FooterAdmin from "components/Footers/FooterAdmin.js";
+import FooterAdmin from "../components/Footers/FooterAdmin";
+import HeaderStats from "../components/Headers/HeaderStats";
+import AdminNavbar from "../components/Navbars/AdminNavbar";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function Admin({ children }) {
   return (

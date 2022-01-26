@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import {ContextGlobal} from 'components/contexts/ContextGlobal'
 import Link from "next/link";
+import { ContextGlobal } from "../contexts/ContextGlobal";
 
 export default function Number4() {
 

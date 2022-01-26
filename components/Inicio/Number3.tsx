@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import ContextPagina from 'components/contexts/ContextPagina'
 import Link from "next/link";
+import ContextPagina from "../contexts/ContextPagina";
 
 export default function Number3() {
 

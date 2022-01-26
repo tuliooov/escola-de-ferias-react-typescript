@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FooterSmall(props) {
+export default function FooterSmall(props: { absolute: boolean; }) {
   return (
     <>
       <footer

@@ -4,9 +4,7 @@ import Banner from "../components/Inicio/Banner";
 import Number1 from "../components/Inicio/Number1";
 import IndexNavbar from "../components/Navbars/IndexNavbar";
 
-export default function Index() {
-  console.log('RENDERIZEI O COMPONENT')
-
+export default function Exemplo1() {
 
   return (
     <>
