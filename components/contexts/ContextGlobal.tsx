@@ -6,14 +6,23 @@ export function ContextGlobalProvider(parametros) {
    const {
       children
    } = parametros
-    const [ valor, setValor ] = useState(0)
-    const [ carregando, setCarregando ] = useState(true)
+   
+   const [exibirExemploProps, setExibirExemploProps] = useState(false)
+
+  const abrirExemplo = () => {
+    setExibirExemploProps(true)
+  }
+
+  const fecharExemplo = () => {
+    setExibirExemploProps(false)
+  }
 
     return(
        <ContextGlobal.Provider
           value = {{
-            valor, setValor,
-            carregando, setCarregando
+            exibir: exibirExemploProps,
+            fecharExemplo: fecharExemplo,
+            abrirExemplo: abrirExemplo 
           }}
        >
           {children}

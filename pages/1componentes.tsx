@@ -1,16 +1,14 @@
 import React from "react";
 import Footer from "../components/Footers/Footer";
-import Banner from "../components/Inicio/Banner";
-import Outros from "../components/Inicio/Outros";
+import BannerComponentizacoes from "../components/Inicio/BannerComponentizacoes";
 import IndexNavbar from "../components/Navbars/IndexNavbar";
 
-export default function Escola() {
-  console.log('Rodei Escola')
+export default function Componentes() {
+
   return (
     <>
         <IndexNavbar />
-        <Banner/>
-        <Outros/>
+        <BannerComponentizacoes />
         <Footer />
     </>
   );
