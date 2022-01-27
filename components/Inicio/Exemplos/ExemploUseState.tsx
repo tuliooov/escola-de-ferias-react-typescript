@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ExemploUseState(props: { exibir: boolean; fecharExemplo: () => void }) {
+export default function ExemploUseState(props) {
 
     if(props.exibir !== true){
         return <></>
@@ -15,7 +15,6 @@ export default function ExemploUseState(props: { exibir: boolean; fecharExemplo:
                 <p>
                     do Hook useState
                 </p>
-                <button onClick={props.fecharExemplo}>Fechar</button>
             </div>
         </>
     )

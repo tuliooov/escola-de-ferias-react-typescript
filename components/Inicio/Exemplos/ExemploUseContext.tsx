@@ -1,12 +1,8 @@
 import React, { useContext } from "react";
 import ContextPagina from "../../contexts/ContextPagina";
 
-export default function ExemploUseContext() {
+export default function ExemploUseContext({ exibir, fecharExemplo }) {
 
-    const {
-        exibir,
-        fecharExemplo
-    } = useContext(ContextPagina)
 
     if(exibir !== true){
         return <></>

@@ -23,12 +23,6 @@ export default function PaginaExemploUseEffect() {
 
   // vai rodar sempre na primeira renderizacao
   // vai rodar sempre que os estados monitorados forem alterados
-  useEffect(() => {
-    console.log("Rodei a função useEffect");
-    
-    alert("Valor da variavel é exibirExemploProps " + exibirExemploProps)
-
-  }, [exibirExemploProps])
 
   return (
     <>

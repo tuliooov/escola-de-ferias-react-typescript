@@ -23,10 +23,7 @@ export default function PaginaExemploUseContext() {
 
 
   return (
-    <ContextPagina.Provider value={{
-      exibir: exibirExemploProps,
-      fecharExemplo: fecharExemplo 
-    }}>
+    <>
         <IndexNavbar />
         <BannerProps 
           title="O que é useContext no React?"
@@ -36,8 +33,8 @@ export default function PaginaExemploUseContext() {
             action: abrirExemplo
           }}
         />
-        <ExemploUseContext />  
+        <ExemploUseContext exibir={exibirExemploProps} fecharExemplo={fecharExemplo} />  
         <Footer />
-    </ContextPagina.Provider>
+    </>
   );
 }

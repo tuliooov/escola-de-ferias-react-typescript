@@ -1,19 +1,17 @@
 import Link from "next/link";
 import React from "react";
 
-export default function BannerProps(props) {
-
-
+export default function BannerProps() {
   return (
     <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
       <div className="container mx-auto items-center flex flex-wrap">
         <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
           <div className="pt-32 sm:pt-0">
             <h2 className="font-semibold text-4xl text-blueGray-600">
-              {props.title}
+              {/* aqui é o tiutlo */}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-              {props.description}
+              {/* aqui é a descricao */}
               </p>
             <div className="mt-12">
               <Link href={`/exemplos`} >
@@ -23,7 +21,7 @@ export default function BannerProps(props) {
                   Voltar
                 </a>
               </Link >
-              {props.buttonAction && <button onClick={props.buttonAction.action}>{props.buttonAction.text}</button>}
+              {/* {props.buttonAction && <button onClick={props.buttonAction.action}>{props.buttonAction.text}</button>} */}
             </div>
           </div>
         </div>
