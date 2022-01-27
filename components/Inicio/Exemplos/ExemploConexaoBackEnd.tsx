@@ -17,6 +17,8 @@ export default function ExemploConexaoBackEnd() {
 
 
     //Certifique-se que o backend está funcionando, usando a extensão ThunderClient
+    // criar um form post para adicionar produtos 
+
 
     const {
         exibir,

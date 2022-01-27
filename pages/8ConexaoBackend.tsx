@@ -14,6 +14,8 @@ export default function PaginaExemploConexaoBackEnd() {
     abrirExemplo,
   } = useContext(ContextGlobal)
 
+  // criar um form post para adicionar produtos 
+
   console.log("exibirExemploProps é ", exibir)
 
   return (

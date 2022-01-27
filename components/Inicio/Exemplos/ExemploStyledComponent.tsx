@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { ContextGlobal } from "../../contexts/ContextGlobal";
-import { DivBlackAbsolute } from "./exemplos.styles";
 
 export default function ExemploStyledComponent() {
 
@@ -20,7 +19,7 @@ export default function ExemploStyledComponent() {
 
     return (
         <>
-            <DivBlackAbsolute color={color}>
+            <div id={"divBlackAbsolute"}>
                 <h1>
                     OLÁ MUNDO !
                 </h1>
@@ -30,7 +29,7 @@ export default function ExemploStyledComponent() {
                 <input type="color" value={color} onChange={(e) => setColor(e.target.value)}>
                 </input>
                 <button onClick={fecharExemplo}>Fechar</button>
-            </DivBlackAbsolute>
+            </div>
         </>
     )
 }

@@ -1,19 +1,15 @@
-import type { NextPage } from 'next';
-import type { AppProps as NextAppProps } from "next/app";
-import Head from 'next/head';
-import { ReactNode, useEffect } from 'react';
-import React from 'react';
+import React, { ReactNode, useEffect } from "react";
+import App, { AppProps } from "next/app";
+import Head from "next/head";
+
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/tailwind.css";
-import { ContextGlobalProvider } from '../components/contexts/ContextGlobal';
-
-type AppProps<P = any> = {
-  pageProps: P;
-} & Omit<NextAppProps<P>, "pageProps">;
+import { ContextGlobalProvider } from "../components/contexts/ContextGlobal";
+import { NextPage } from "next";
 
 
-function MeuAppSw({ Component }) {
+function MeuAppSw({ Component }): JSX.Element {
   useEffect(() => {
     if("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
@@ -32,11 +28,14 @@ function MeuAppSw({ Component }) {
   return Component
 }
 
-type GetLayout = (page: ReactNode) => ReactNode;
+const defaultGetLayout: Layout = (page: ReactNode): ReactNode => page;
+
+
+type Layout = (page: ReactNode) => ReactNode;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Page<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: GetLayout;
+  layout?: Layout;
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -44,22 +43,28 @@ type MyAppProps<P = {}> = AppProps<P> & {
   Component: Page<P>;
 };
 
-const defaultGetLayout: GetLayout = (page: ReactNode): ReactNode => page;
+export default class MyApp extends App {
 
-export default function App({ Component, pageProps }: MyAppProps): JSX.Element {
-  const getLayout = Component.getLayout ?? defaultGetLayout;
+  render() {
+    const { Component, pageProps } = this.props as AppProps & MyAppProps;
+  
+    const Layout = Component.layout || defaultGetLayout;
 
-  return (
-    <ContextGlobalProvider>
-      <Head>
-      <link rel="manifest" href="/manifest.json" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <title>Escola de Ferias</title>
-      </Head>
-      {getLayout(<MeuAppSw Component={<Component {...pageProps} />}/>)}
-    </ContextGlobalProvider>
-  )
+    return (
+      <ContextGlobalProvider>
+          <Head>
+            <link rel="manifest" href="/manifest.json" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
+            <title>Escola de Ferias</title>
+            {/* <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> */}
+          </Head>
+          <Layout>
+              <MeuAppSw Component={<Component {...pageProps} />}/>
+          </Layout>
+      </ContextGlobalProvider>
+    );
+  }
 }
