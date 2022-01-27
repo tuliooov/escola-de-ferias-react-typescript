@@ -1,4 +1,4 @@
-var CACHE_NAME = 'escoladeferias';
+var CACHE_NAME = 'escoladeferiasTSX';
 var urlsToCache = [
 //  '/',
 ];
